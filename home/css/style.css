@@ -1,0 +1,520 @@
+/* my framework */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.padd-15 {
+    padding: 0 15px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.shadow-dark {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+ul {
+    list-style: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%; 
+}
+
+.col-lg-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+
+.display2 {
+    display: none;
+}
+
+/* end framework */
+
+/* start to do app  */
+
+.todo-container {
+    width: 600px;
+    margin: 30px auto ;
+    background-color: #f6f6f6;
+}
+
+.todo-container .add-task {
+    padding: 15px;
+    background: linear-gradient(to right, #4633af, #00c9db);
+    position: relative;
+}
+
+.todo-container .add-task input {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+    width: calc(100% - 15px);
+    color: #fff;
+    font-size: 20px;
+}
+
+.todo-container .add-task .plus {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    right: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    line-height: 43px;
+    text-align: center;
+    cursor: pointer;
+    color: #009688;
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.todo-container .add-task .plus:hover{
+    background-color: #06067e;
+    color: #fff;
+}
+
+.todo-container .tasks-content {
+    padding: 15px;
+}
+
+.todo-container .tasks-content .no-tasks-message {
+    color: #777;
+    font-size: 15px;
+}
+
+.todo-container .tasks-content> span {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.todo-container .tasks-content > span:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.todo-container .tasks-content .task-box {
+    background-color: #fff;
+    padding: 10px !important;
+    margin-bottom: 10px;
+}
+
+.todo-container .tasks-content .task-box .delete {
+    float: right;
+    background-color: #e91e63;
+    padding: 4px 10px ;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.todo-container .tasks-content .task-box .complete {
+    float: right;
+    background-color: #03a9f4;
+    padding: 4px 10px ;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.todo-container .tasks-content .task-box.finished {
+    text-decoration: line-through;
+    color: red;
+}
+
+.tasks-stats {
+    width: 600px;
+    overflow: hidden;
+    font-size: 12px;
+    margin: 10px auto;
+}
+
+.tasks-stats .tasks-count {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+.tasks-stats .tasks-completed {
+    width: 50%;
+    float: right;
+    padding: 10px;
+    text-align: right;
+}
+
+.tasks-stats .tasks-count span, 
+.tasks-stats .tasks-completed span {
+    color: #fff;
+    padding: 1px 5px;
+    font-size: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.tasks-stats .tasks-count span {
+    background-color: #e91e63;
+}
+
+.tasks-stats .tasks-completed span {
+    background-color: #03a9f4;
+}
+
+.tasks-stats .del-all {
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #e91e63;
+    border: none;
+    width: auto;
+    float: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.tasks-stats .read-all {
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #03a9f4;
+    border: none;
+    width: auto;
+    float: right;
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 650px) {
+    .todo-container, 
+    .tasks-stats {
+        width: 450px;
+    }
+}
+
+/* end to do app */
+
+
+/* start navbar */
+
+.navbar {
+    padding: 3px 0;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    border-bottom: 1px solid #414741c4;
+    z-index: 2;
+}
+
+.navbar .logo {
+    text-align: center;
+}
+
+.navbar .logo .logo-text i{
+    color: #03a9f4;
+}
+
+/* start Aside */
+
+.aside {
+    width: 270px;
+    background-color: rgb(248, 248, 248);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-right: 1px solid #e9dfec;
+    padding: 30px;
+    transition: all 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.aside .logo {
+    padding: 30px 0 0;
+}
+
+.aside .logo a {
+    font-size: 40px;
+    color: #302e4d;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    line-height: 50px;
+}
+
+.aside .nav-toggler {
+    height: 40px;
+    width: 45px;
+    position: fixed;
+    left: 30px;
+    top: 70px;
+    cursor: pointer;
+    border: 1px solid #d4d4e3;
+    z-index: 11;
+    border-radius: 5px;
+    background-color: #fdf9ff;
+    font-size: 24px;
+    display: none;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.aside .nav {
+    margin: 60px 0;
+    list-style: none;
+}
+
+.aside .nav li {
+    display: block;
+}
+
+.aside .nav li a {
+    font-size: 16px;
+    color: #302e4d;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 36px;
+    display: block;
+    border-bottom: 1px solid #e9dfec;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.aside .nav li a:hover,
+.aside .nav li a.active {
+    color: #4633af;
+    padding-left: 10px;
+}
+
+.aside .nav li a.logOut {
+    background-color: rgb(187, 8, 8);
+    color: #fff;
+}
+
+.aside .nav li a .fa {
+    margin-right: 5px;
+}
+
+.aside .copyright {
+    font-size: 13px;
+    color: #7d7d7d;
+}
+
+
+/* End Aside */
+
+/* strat content [home] */
+
+.main-content {
+    padding-left: 270px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 1199px) {
+
+.aside .nav-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.btntoggle {
+    left: 275px !important;
+}
+
+.open {
+    left: -270px;
+}
+
+.padding {
+    padding-left: 0;
+}
+
+.about .about-content .personal-info .info-item p span {
+    display: block;
+}
+}
+
+/* End content [home] */
+
+/* change password */
+
+.section {
+    padding-left: 270px;
+    padding-top: 20px;
+}
+
+.change .intro {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.change .intro input {
+    display: block;
+    margin:10px auto;
+    padding: 17px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: transparent;
+}
+
+.change .intro button {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    background-color: #553ed8;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+/* body dark */
+
+body.dark .section {
+    background-color: #151515;
+}
+
+body.dark .tasks-count,
+body.dark .tasks-completed,
+body.dark .intro  h2{
+    color: #fff !important;
+}
+
+body.dark .aside,
+body.dark .todo-container  {
+    background-color: #222;
+}
+
+body.dark .todo-container .tasks-content .task-box {
+    background-color: #151515;
+    border: 1px solid #918c8c;
+}
+
+body.dark .aside .nav li a {
+    color: #fff;
+}
+
+body.dark .aside .nav li a:hover {
+    color: #302e4d;
+}
+
+body.dark .aside,
+body.dark .aside .nav li a {
+    border-color: #393939 ;
+}
+
+body.dark .navbar {
+    background-color: #393939;
+    color: #fff;
+}
+
+
+/* end body dark */
+
+
+/* style switcher */
+
+.style-switcher {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #d4d4e3;
+    border-right: none;
+    transform: translate(100%);
+    transition: all 0.4s ease-in-out ;
+}
+
+.style-switcher.styleopen {
+    transform: translate(0);
+    transition: all 0.4s ease-in-out ;
+}
+
+.style-switcher h5 {
+    font-size: 16px;
+    color: #302e4d;
+    margin-bottom: 8px;
+    margin-top: 0;
+    border-bottom: 1px solid #e8dfec;
+}
+
+.style-switcher .toggle-style-switcher {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    background-color: #fff;
+    left: -45px;
+    top: -1px;
+    border: 1px solid #d4d4e3;
+    border-right: none;
+    text-align: center;
+    border-radius: 0 0 0 5px;
+}
+
+.style-switcher .toggle-style-switcher i {
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 45px;
+}
